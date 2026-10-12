@@ -59,6 +59,9 @@ class Power : public ::aidl::android::hardware::power::BnPower {
     binder_status_t dump(int fd, const char **args, uint32_t numArgs) override;
     ndk::ScopedAStatus sendCompositionData(const std::vector<CompositionData> &in_data) override;
     ndk::ScopedAStatus sendCompositionUpdate(const CompositionUpdate &in_update) override;
+    ndk::ScopedAStatus setNodeCeiling(const std::string &in_nodePath, int64_t in_maxCeiling,
+                                      int64_t in_minFloor) override;
+    ndk::ScopedAStatus clearNodeCeiling(const std::string &in_nodePath) override;
 
   private:
     void initSupportStatus();

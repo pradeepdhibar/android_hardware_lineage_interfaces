@@ -57,6 +57,12 @@ constexpr SupportList<Mode> kModeEarliestVersion {
   {Mode::GAME_LOADING, 3},
   {Mode::DISPLAY_CHANGE, 5},
   {Mode::AUTOMOTIVE_PROJECTION, 5},
+  {Mode::APP_START, 6},
+  {Mode::UI_ANIMATION, 6},
+  {Mode::SYSTEM_UI, 6},
+  {Mode::FLING, 6},
+  {Mode::CPU_BENCHMARK, 6},
+  {Mode::GPU_BENCHMARK, 6},
 };
 
 constexpr SupportList<Boost> kBoostEarliestVersion = {

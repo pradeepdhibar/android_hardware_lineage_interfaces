@@ -290,6 +290,21 @@ ndk::ScopedAStatus Power::sendCompositionUpdate(const CompositionUpdate &) {
     return ndk::ScopedAStatus::ok();
 }
 
+
+ndk::ScopedAStatus Power::setNodeCeiling(
+        const std::string &in_nodePath,
+        int64_t in_maxCeiling, int64_t in_minFloor) {
+    HintManager::GetInstance()->SetNodeCeiling(
+            in_nodePath, in_maxCeiling, in_minFloor);
+    return ndk::ScopedAStatus::ok();
+}
+
+ndk::ScopedAStatus Power::clearNodeCeiling(
+        const std::string &in_nodePath) {
+    HintManager::GetInstance()->ClearNodeCeiling(in_nodePath);
+    return ndk::ScopedAStatus::ok();
+}
+
 }  // namespace pixel
 }  // namespace impl
 }  // namespace power
